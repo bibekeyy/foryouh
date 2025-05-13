@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Center everything */
+body {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+  gap: 60px;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  cursor: none;
+}
+
+header{
+  align-items: center;
+  top: 30px;
+  position: absolute;
+  size: 20px;
+  color: #eee;
+  font-weight: 500;
+}
+
+/* Style for both buttons */
+button {
+  padding: 20px 40px;
+  font-size: 18px;
+  border: none;
+  top: 70;
+  border-radius: 10px;
+  box-shadow: 0 0 10px white;
+  background-color: #00bcd4;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, font-size 0.2s ease;
+}
+
+.button-container {
+  display: flex;
+  gap: 60px;
+}
+
+.gif{
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  bottom: 20px;
+  z-index: -100;
+  mix-blend-mode:lighten;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.3s ease, height 0.3s ease;
+  box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.4);
+  mix-blend-mode: difference; /* Creates the negative effect */
+}
+
+/* Grows on hover */
+.cursor-grow {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Elements that trigger the grow effect */
+.hover-target {
+  color: #eee;
+  transition: color 0.3s;
+  cursor: none;
+  font-size: 24px;
+  margin: 20px 0;
+}

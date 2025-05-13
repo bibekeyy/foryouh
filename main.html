@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You,re Welcome</title>
+  <link rel="stylesheet" href="card.css">
+</head>
+<body>
+  <header>
+  <h1 class="hover-target">Hi Pookie🎀!!</h1>
+  <br><p style="text-align: center;">YuHu</p>
+  </header>
+  <div class="custom-cursor"></div>
+  <div class="hover-target">
+    <div class="button-container">
+  <button id="yesBtn">Yes</button>
+  <button id="noBtn">No</button>
+    </div>
+    </div>
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    let yesScale = 1;
+    const messages = [
+      "Really??(Yes)",
+      "Think again!(Yes)",
+      "You can't say that...(Yes)",
+      "Say Yes!(Yes)",
+      "Still No?(Yes)",
+      "Come on!(Yes)",
+      "Please!(Yes)",
+      "Last chance!(Yes)",
+      "Please say Yes!",
+      "Click Yes now!(Yes)"
+    ];
+    let clickCount = 0;
+
+    noBtn.addEventListener("click", () => {
+      // Increase size
+      yesScale += 0.5;
+      yesBtn.style.transform = `scale(${yesScale})`;
+
+      // Change text
+      const msg = messages[clickCount % messages.length];
+      yesBtn.textContent = msg;
+      clickCount++;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      window.location.href = "nextpage.html"; // Your next page here
+    });
+    const cursor = document.querySelector('.custom-cursor');
+
+    let mouseX = 0, mouseY = 0;
+    let currentX = 0, currentY = 0;
+    const delay = 0.1;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animate() {
+      currentX += (mouseX - currentX) * delay;
+      currentY += (mouseY - currentY) * delay;
+      cursor.style.left = `${currentX}px`;
+      cursor.style.top = `${currentY}px`;
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Grow on hover
+    const targets = document.querySelectorAll('.hover-target');
+    targets.forEach(target => {
+      target.addEventListener('mouseenter', () => {
+        cursor.classList.add('cursor-grow');
+      });
+      target.addEventListener('mouseleave', () => {
+        cursor.classList.remove('cursor-grow');
+      });
+    });
+  </script>
+  <div class="gif">
+  <img src="gg/bear-hug.gif">
+  </div>
+</body>
+</html>
