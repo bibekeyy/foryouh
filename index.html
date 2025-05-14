@@ -7,15 +7,27 @@
   <link rel="stylesheet" href="card.css">
 </head>
 <body>
+  <audio autoplay loop>
+    <source src="audio/From The Start.mp3">
+  </audio>
   <header>
-  <h1 class="hover-target">Hi Pookie🎀!!</h1>
-  <br><p style="text-align: center;">YuHu</p>
+  <h1 class="hover-target">Hi Pookie Shristi🎀!!</h1>
+  <br><p style="text-align: center;">Wanna Go Date With Me?<br> Hint: Click Yes</p>
   </header>
   <div class="custom-cursor"></div>
   <div class="hover-target">
+
+    <div class="main-container">
+    <div class="message-area" id="messageArea"></div>
+
+    <div class="button-container">
+      <div class="yes-section">
+        <div id="yesMessage" class="yes-message"></div>
     <div class="button-container">
   <button id="yesBtn">Yes</button>
   <button id="noBtn">No</button>
+    </div>
+    </div>
     </div>
     </div>
   <script>
@@ -24,16 +36,16 @@
 
     let yesScale = 1;
     const messages = [
-      "Really??(Yes)",
-      "Think again!(Yes)",
-      "You can't say that...(Yes)",
-      "Say Yes!(Yes)",
-      "Still No?(Yes)",
-      "Come on!(Yes)",
-      "Please!(Yes)",
-      "Last chance!(Yes)",
+      "Really??",
+      "Think again!",
+      "You can't say that...",
+      "Say Yes!",
+      "Still No?",
+      "Come on!",
+      "Please!",
+      "Last chance!",
       "Please say Yes!",
-      "Click Yes now!(Yes)"
+      "Click Yes now!"
     ];
     let clickCount = 0;
 
@@ -44,7 +56,7 @@
 
       // Change text
       const msg = messages[clickCount % messages.length];
-      yesBtn.textContent = msg;
+      yesMessage.textContent = msg;
       clickCount++;
     });
 
